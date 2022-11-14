@@ -6,8 +6,7 @@
     <meta charset="utf-8">
     <meta name="keywords" content="XSS 漏洞总结, DZ_Blog">
     <meta name="description" content="
-一.反射型 XSS漏洞反射型 xss 又称为非持久型 xss ，这种攻击方式往往具有一次性。
-攻击方式：攻击者通过电子邮件或者聊天工具等将包含 XSs 代码的恶意链接发送给目标用户。放目标用户访问该链接时，服务器就收目标的请求并进行处理，">
+一.反射型 XSS漏洞（1）、反射型 xss 又称为非持久型 xss ，这种攻击方式往往具有一次性。（2）、攻击方式：攻击者通过电子邮件或者聊天工具等将包含 XSs 代码的恶意链接发送给目标用户。放目标用户访问该链接时，服务器就收目标的请">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -609,7 +608,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    958
+                    962
                 </div>
                 
 
@@ -632,16 +631,12 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <hr>
-<h2 id="一-反射型-XSS漏洞"><a href="#一-反射型-XSS漏洞" class="headerlink" title="一.反射型 XSS漏洞"></a>一.反射型 XSS漏洞</h2><pre><code>反射型 xss 又称为非持久型 xss ，这种攻击方式往往具有一次性。
-攻击方式：攻击者通过电子邮件或者聊天工具等将包含 XSs 代码的恶意链接发送给目标用户。放目标用户访问该链接时，服务器就收目标的请求并进行处理，然后把带有 xss代码的数据发送给目标用户的浏览器，浏览器会解析这段带有 xss 代码的恶意脚本，就会触发 xss 漏洞。
-</code></pre>
+<h2 id="一-反射型-XSS漏洞"><a href="#一-反射型-XSS漏洞" class="headerlink" title="一.反射型 XSS漏洞"></a>一.反射型 XSS漏洞</h2><p>（1）、反射型 xss 又称为非持久型 xss ，这种攻击方式往往具有一次性。<br>（2）、攻击方式：攻击者通过电子邮件或者聊天工具等将包含 XSs 代码的恶意链接发送给目标用户。放目标用户访问该链接时，服务器就收目标的请求并进行处理，然后把带有 xss代码的数据发送给目标用户的浏览器，浏览器会解析这段带有 xss 代码的恶意脚本，就会触发 xss 漏洞。</p>
 <ol>
 <li>测试的payload：<code>&lt;script&gt;alert(1)&lt;/script&gt;</code><br> 注：要注意alert()括号里面的写法，如字母xss，要加引号，数学不用</li>
 <li>执行流程<br> (1) 在输入点输入内容，构造恶意代码，输入点是以 GET 方式提交的<br> (2) 后端接受提交的数据，并没有对输入进行过滤<br> (3) 然后将其呈现给前端，浏览器执行恶意代码</li>
 </ol>
-<h2 id="二-存储型-XSS漏洞"><a href="#二-存储型-XSS漏洞" class="headerlink" title="二.存储型 XSS漏洞"></a>二.存储型 XSS漏洞</h2><pre><code>存储型 xss 又称为持久性 xss ，攻击脚本将被永久的存放在目标服务器的数据库或文件中，既有很高的隐蔽性。
-攻击方式：这种攻击手法多见于论坛、博客和留言板；攻击者在发帖的过程中，将恶意脚本和正常的信息一起注入帖子的内容中。帖子被服务器存储下来，恶意脚本也就会被存放在服务器的后端数据库中，当其他的用户浏览这个被注入了恶意脚本的帖子时，恶意脚本会在他们的浏览器中解析并执行。
-</code></pre>
+<h2 id="二-存储型-XSS漏洞"><a href="#二-存储型-XSS漏洞" class="headerlink" title="二.存储型 XSS漏洞"></a>二.存储型 XSS漏洞</h2><p>（1）、存储型 xss 又称为持久性 xss ，攻击脚本将被永久的存放在目标服务器的数据库或文件中，既有很高的隐蔽性。<br>（2）、攻击方式：这种攻击手法多见于论坛、博客和留言板；攻击者在发帖的过程中，将恶意脚本和正常的信息一起注入帖子的内容中。帖子被服务器存储下来，恶意脚本也就会被存放在服务器的后端数据库中，当其他的用户浏览这个被注入了恶意脚本的帖子时，恶意脚本会在他们的浏览器中解析并执行。</p>
 <ol>
 <li>测试的 payload :</li>
 </ol>
