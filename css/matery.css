@@ -264,8 +264,8 @@ mark {
 }
 
 .bg-color {
-    background-image: linear-gradient(to right, #00fff6 0%, #04ff00 100%);
-    opacity: 0.6;
+    background-image: linear-gradient(to right, #0065ff 0%, #00ff1d 100%);
+    opacity: 0.8;
 }
 
 .text-color {
@@ -2464,18 +2464,7 @@ body.DarkMode .skillbar .skill-bar-percent {
   background: linear-gradient(#fefefe, #fffbe8);
 }
 
-/*黑夜模式按钮*/
-.sum-moon-box {
-  width: 48px;
-  height: 48px;
-  text-align: center;
-  border-radius: 50%;
-  position: fixed;
-  right: 15px;
-  bottom: 195px;
-  margin-bottom: 0;
-  z-index: 900;
-}
+
 
 .sum-moon-box .btn-floating {
   width: 48px;
@@ -3066,4 +3055,19 @@ body.DarkMode #stars3:after {
 
 body.DarkMode .search-input {
     color: rgba(255, 255, 255, 0.6);
+}
+
+/* 滚动条 */
+::-webkit-scrollbar-thumb {
+    background-color: #0ee1b3;
+    background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,.4) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.4) 50%,rgba(255,255,255,.4) 75%,transparent 75%,transparent);
+    border-radius: 3em;
+}
+::-webkit-scrollbar-track {
+    background-color: rgb(218, 202, 255);
+    border-radius: 3em;
+}
+::-webkit-scrollbar {
+    width: 8px;
+    height: 15px;
 }
