@@ -13,3 +13,11 @@
     }
 }
 
+*
+{
+    cursor: url("/medias/cursor1.cur"),auto!important;
+}
+:active{
+    cursor: url("/medias/cursor2.ani"),auto!important;
+}
+
