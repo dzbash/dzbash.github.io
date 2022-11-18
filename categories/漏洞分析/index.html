@@ -857,11 +857,12 @@ $(function () {
 
 
     <!-- 白天和黑夜主题 -->
+
 <div class="sum-moon-box">
-  <a class="btn-floating btn-large waves-effect waves-light" onclick="switchNightMode()" title="切换主题" >
-    <i id="sum-moon-icon" class="fas fa-sun" style="width:48px; height:48px; font-size: 28px;"></i>
+  
   </a>
 </div>
+
 
 <script>
   function switchNightMode() {
@@ -885,16 +886,7 @@ $(function () {
   <div id="stars2"></div>
   <div id="stars3"></div>
 </div>
-    <script>
-        /* 模式判断 */
-        if (localStorage.getItem('isDark') === '1') {
-          document.body.classList.add('DarkMode');
-          $('#sum-moon-icon').addClass("fa-sun").removeClass('fa-moon')
-        } else {
-          document.body.classList.remove('DarkMode');
-          $('#sum-moon-icon').removeClass("fa-sun").addClass('fa-moon')
-        }
-    </script>
+    
 
     <script src="/libs/materialize/materialize.min.js"></script>
     <script src="/libs/masonry/masonry.pkgd.min.js"></script>
