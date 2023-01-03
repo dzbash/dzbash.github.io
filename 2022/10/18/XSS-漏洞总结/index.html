@@ -5,8 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="XSS 漏洞总结, DZ_Blog">
-    <meta name="description" content="
-一.反射型 XSS漏洞（1）、反射型 xss 又称为非持久型 xss ，这种攻击方式往往具有一次性。（2）、攻击方式：攻击者通过电子邮件或者聊天工具等将包含 XSs 代码的恶意链接发送给目标用户。放目标用户访问该链接时，服务器就收目标的请">
+    <meta name="description" content="个人漏洞分析学习笔记&lt;-XSS-&gt;">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -547,14 +546,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    969
+                    2.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    9 分
                 </div>
                 
 
@@ -593,13 +592,133 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <hr>
-<h2 id="一-反射型-XSS漏洞"><a href="#一-反射型-XSS漏洞" class="headerlink" title="一.反射型 XSS漏洞"></a>一.反射型 XSS漏洞</h2><p>（1）、反射型 xss 又称为非持久型 xss ，这种攻击方式往往具有一次性。<br>（2）、攻击方式：攻击者通过电子邮件或者聊天工具等将包含 XSs 代码的恶意链接发送给目标用户。放目标用户访问该链接时，服务器就收目标的请求并进行处理，然后把带有 xss代码的数据发送给目标用户的浏览器，浏览器会解析这段带有 xss 代码的恶意脚本，就会触发 xss 漏洞。</p>
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>当登录某某网站时，需要输入账号和密码进行登录，如果每次都进行输入就会显得繁琐复杂，于是网站就可能会推出一个“记住我”的功能，以此实现相应的时间内再次登录该网站时不需要输入账号密码就可以登录，或者是自动登录。<br>那么网站究竟是怎样实现这样的功能的呢？<br>是将我们的账号密码保存到本地浏览器了，还是其他的方法呢。</p>
+<p>这就要从HTTP的无状态说起，</p>
+<h4 id="HTTP的基本知识"><a href="#HTTP的基本知识" class="headerlink" title="HTTP的基本知识"></a>HTTP的基本知识</h4><blockquote>
+<p>HTTP的请求方式</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>归类</th>
+<th>方法</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>常用</td>
+<td>GET</td>
+<td>请求从服务器获取资源</td>
+</tr>
+<tr>
+<td></td>
+<td>HEAD</td>
+<td>类似与GET请求，只不过不会发挥实体数据，是获取报头</td>
+</tr>
+<tr>
+<td></td>
+<td>POST</td>
+<td>想服务器提交数据</td>
+</tr>
+<tr>
+<td></td>
+<td>PUT</td>
+<td>替换服务器内容</td>
+</tr>
+<tr>
+<td>不常用</td>
+<td>DELETE</td>
+<td>请求服务器删除指定资源</td>
+</tr>
+<tr>
+<td></td>
+<td>TRACE</td>
+<td>对链路进行测试或诊断</td>
+</tr>
+<tr>
+<td></td>
+<td>OPTIONS</td>
+<td>列出可对资源实行的操作方法，Allow字段里返回</td>
+</tr>
+<tr>
+<td></td>
+<td>CONNECT</td>
+<td>要求服务器和另一台服务器建立连接，充当代理</td>
+</tr>
+<tr>
+<td>扩展</td>
+<td></td>
+<td>MKCOL、COPY、MOVE、LOCK、UNLOCK、PATCH</td>
+</tr>
+</tbody></table>
+<hr>
+<p>基本了解即可</p>
+<blockquote>
+<p>HTTP的请求报文和响应报文的基本格式</p>
+</blockquote>
+<p>当用户或者客户端向服务器请求资源的时候，必须遵循以下的格式<br> <img src="https://img-blog.csdnimg.cn/79e360a05b9249e6a4ae1710cf68e22f.png"></p>
+<p>当服务器给予客户端回应的时候也必须遵循以下的响应格式<br><img src="https://img-blog.csdnimg.cn/734dae721a954584914e1f4605c3067b.png"></p>
+<h4 id="HTTP的特点"><a href="#HTTP的特点" class="headerlink" title="HTTP的特点"></a>HTTP的特点</h4><ul>
+<li>请求应答模式<br>没有服务端主动给浏览器发送数据的模式，从HTTP 2.0开始也有服务端给客户端推送的模式，在这之前一直都是 ”你要什么它才给你什么“的请求应答模式</li>
+<li>灵活可扩展<br>数据类型多种多样</li>
+<li>可靠传输模式<br>HTTP是工作在传输层的TCP的协议之上的，我们知道TCP有”三次握手，四次挥手“，所以HTTP是可靠的</li>
+<li>无状态<br>浏览器任何一次去请求服务器的时候都是 <strong>独立</strong> 的，没有前后的联系，服务器也不知道你之前是干什么的，有什么作用，这就是“无状态”</li>
+</ul>
+<h4 id="cookie的产生"><a href="#cookie的产生" class="headerlink" title="cookie的产生"></a>cookie的产生</h4><p>当一个用户第一次访问服务器的时候，服务端要会对用户产生一个“标志”，包含在响应头里面，这个标志就是“cookie”<br>当用户第一次访问一个网站的时候，网站识别到用户的请求后，将一个一个的键值发送给用户，客户端接收到cookie之后会在本地保存下来，之后再次访问该网站的时候就必须携带这个cookie，服务端得到这个cookie之后就能识别出用户的身份了</p>
+<blockquote>
+<p>Set-Cookie: 第一次访问，服务器响应给客户端<br>Cookie: 之后的访问，客户端发送给服务器</p>
+</blockquote>
+<blockquote>
+<p>Set-Cookie格式</p>
+</blockquote>
+<p><img src="https://img-blog.csdnimg.cn/be825395313d4b61b43d8b53df749fa5.png"></p>
+<p>cookie默认保存在内存中，是临时的，如果设置了expires（cookie的过期时间）的属性，那就是持久的，必须要保存在磁盘中。</p>
+<h4 id="Cookie的特点"><a href="#Cookie的特点" class="headerlink" title="Cookie的特点"></a>Cookie的特点</h4><ul>
+<li>明文的，公开的</li>
+<li>可修改的</li>
+<li>大小受限（视浏览器而定）</li>
+</ul>
+<hr>
+<p>网站的“记住我”其实是记住登录状态，记录cookie值，cookie还可以用户 跟踪用户行为<br>之后登录网站服务器就会为用户下发sessionid，服务端会将其保存在本地，服务端还会判断用户是否登录，即登录状态，最后用户退出的时候会销毁sessionid</p>
+<p>因此，当我们获取到已经登录的cookie时，我们就可以不需要输入账号密码，就直接登录账号，从而做很多事情。那么我们怎么获取其他人的cookie呢？总不能去复制他电脑本地保存的cookie值吧。</p>
+<p>首先我们要知道一些前端的知识，浏览器直接提供了一个document的属性</p>
+<pre class="line-numbers language-javaScript"><code class="language-javaScript">//获取cookie
+document.cookie;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>在控制台输入该指令就可以直接拿到cookie的值，甚至可以通过alert()函数弹出我们获取的cookie，还有一点就是我们要知道所有的cookie都是禁止跨域名访问的。</p>
+<p>我们获取到cookie之后怎么设置才能达到登录他人账号的效果呢</p>
+<pre class="line-numbers language-javaScript"><code class="language-javaScript">//设置cookie
+document.cookie="username=wuya";
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<p>当我们再次设置cookie时，如果它们的属性全部一样，新的值就会覆盖旧的值，就能达到修改cookie的效果。</p>
+<hr>
+<p>此时，如果我们能够远程执行这样的 JavaScript 代码就可以获取到网站的cookie了。那么我们又不能直接修改网站的源码，那又要怎么插入 JavaScript 代码呢？</p>
+<p>受SQL注入的思想，这个应该是要从类似的输入框入手。常见的有GET和POST方法来插入我们的 JavaScript 代码，这种在浏览器中插入一个脚本，让浏览器得到执行的一个动作就叫做“跨站的脚本攻击”全称“Cross Site Script”也就是XSS</p>
+<p>当我们成功插入脚本后，用户下次登录或者点击就可能会执行我们的脚本，这就达到了攻击的目的，</p>
+<table>
+<thead>
+<tr>
+<th>JavaScript</th>
+<th>Java</th>
+<th>VBScript</th>
+<th>ActiveX</th>
+<th>Flash</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>这些语言都有可能插入执行。</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="一-反射型-XSS漏洞"><a href="#一-反射型-XSS漏洞" class="headerlink" title="一.反射型 XSS漏洞"></a>一.反射型 XSS漏洞</h2><p>（1）、反射型 xss 又称为非持久型 xss ，这种攻击方式往往具有一次性。<br>（2）、攻击方式：攻击者通过电子邮件或者聊天工具等将包含 XSs 代码的恶意链接发送给目标用户。放目标用户访问该链接时，服务器就收目标的请求并进行处理，然后把带有 xss代码的数据发送给目标用户的浏览器，浏览器会解析这段带有 xss 代码的恶意脚本，就会触发 xss 漏洞。<br><img src="https://img-blog.csdnimg.cn/f0500331ccac4203baeda47b5acf9661.png" alt="反射型XSS漏洞实现完整流程"></p>
 <ol>
 <li>测试的payload：<code>&lt;script&gt;alert(1)&lt;/script&gt;</code><br> 注：要注意alert()括号里面的写法，如字母xss，要加引号，数学不用</li>
 <li>执行流程<br> (1) 在输入点输入内容，构造恶意代码，输入点是以 GET 方式提交的<br> (2) 后端接受提交的数据，并没有对输入进行过滤<br> (3) 然后将其呈现给前端，浏览器执行恶意代码</li>
 </ol>
-<h2 id="二-存储型-XSS漏洞"><a href="#二-存储型-XSS漏洞" class="headerlink" title="二.存储型 XSS漏洞"></a>二.存储型 XSS漏洞</h2><p>（1）、存储型 xss 又称为持久性 xss ，攻击脚本将被永久的存放在目标服务器的数据库或文件中，既有很高的隐蔽性。<br>（2）、攻击方式：这种攻击手法多见于论坛、博客和留言板；攻击者在发帖的过程中，将恶意脚本和正常的信息一起注入帖子的内容中。帖子被服务器存储下来，恶意脚本也就会被存放在服务器的后端数据库中，当其他的用户浏览这个被注入了恶意脚本的帖子时，恶意脚本会在他们的浏览器中解析并执行。</p>
+<h2 id="二-存储型-XSS漏洞"><a href="#二-存储型-XSS漏洞" class="headerlink" title="二.存储型 XSS漏洞"></a>二.存储型 XSS漏洞</h2><p>（1）、存储型 xss 又称为持久性 xss ，攻击脚本将被永久的存放在目标服务器的数据库或文件中，既有很高的隐蔽性。<br>（2）、攻击方式：这种攻击手法多见于论坛、博客和留言板；攻击者在发帖的过程中，将恶意脚本和正常的信息一起注入帖子的内容中。帖子被服务器存储下来，恶意脚本也就会被存放在服务器的后端数据库中，当其他的用户浏览这个被注入了恶意脚本的帖子时，恶意脚本会在他们的浏览器中解析并执行。<br><img src="https://img-blog.csdnimg.cn/d4db929ffd314fa78201f35c042732f4.png" alt="存储型XSS漏洞实现完整流程"></p>
 <ol>
 <li>测试的 payload :</li>
 </ol>
@@ -610,12 +729,10 @@
 <h2 id="三-DOM-型-XSS漏洞"><a href="#三-DOM-型-XSS漏洞" class="headerlink" title="三. DOM 型 XSS漏洞"></a>三. DOM 型 XSS漏洞</h2><ol>
 <li>DOM简介</li>
 </ol>
-<hr>
 <p> DOM 全称 Document Object Model ，通过 JavaScript ，可以重构整个 HTML文档，就是说可以添加，移除等等，对页面的某个东西进行操作时, JavaScript 就需要获得对 HTML文档中所有元素进行访问的入口，这个入口就是 DOM ，所以在 DOM 型的 xss 漏洞利用中， DOM 可以看成是一个访问 HTML的标准程序接口</p>
 <ol start="2">
 <li>DOM 型 XSS 漏洞概述</li>
 </ol>
-<hr>
 <pre><code>DOM 型 xss 执行场景跟之前两个不同，他是基于文档对象模型的漏洞，它可以动态的构造 DOM节点。所以说，该漏洞是不经过后端代码的，直接构造恶意代码，即可在前端展示
 攻击方式：用户请求一个专门设计的 URL，它是由攻击者提交，而且其中包含 xss 代码。服务器不会以任何的形式包含攻击者的脚本。当用户的浏览器处理这个响应时， DOM型对象就会处理 xss 代码
 </code></pre>
@@ -636,7 +753,15 @@
 <p><img src="https://img-blog.csdnimg.cn/40fc90a1a67a49a2a43a3bf0dc60caab.png"></p>
 <p>(4)点击click me后，查看元素，发现超链接里已经闭合，此时点击(’&gt;what do you see)即可弹出xss</p>
 <p><img src="https://img-blog.csdnimg.cn/b996f52506d04de1820d551a755ec318.png"></p>
-<h2 id="XSS手工利用方式"><a href="#XSS手工利用方式" class="headerlink" title="XSS手工利用方式"></a>XSS手工利用方式</h2>
+<h2 id="预防XSS漏洞"><a href="#预防XSS漏洞" class="headerlink" title="预防XSS漏洞"></a>预防XSS漏洞</h2><p>核心就是“过滤”二字<br>我们要从输入和输出进行过滤，即通过正则表达式匹配恶意脚本</p>
+<ul>
+<li>识别如意脚本，定义恶意脚本的格式进行正则匹配</li>
+<li>对脚本的各种变形也要能够识别，并进行适当的处理</li>
+<li>输出的时候也要特别注意，这种XSS漏洞大多都是因为我们叫用户提交的信息进行“原封不动”的输出导致的。因此我们可以对特殊符号进行转义处理</li>
+<li>由于我们不能将所有的脚本进行过滤，所以我们要使用规则引擎，当出现新的XSS脚本漏洞时，我们将该漏洞添加到过滤名单中即可。</li>
+<li>部署防火墙，WAF全称Web Application Firewall（Web应用防火墙）其不仅可以防护XSS，还可以防护Sql注入、利用本地/远程文件包含漏洞进行的攻击、PHP代码注入、黑客扫描网站、源代码/错误信息泄露等诸多安全漏洞。</li>
+</ul>
+
                 
             </div>
             <hr/>
@@ -1063,7 +1188,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            java学习笔记_1
                         
                     </div>
                     <div class="publish-info">
@@ -1112,7 +1237,7 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            初识ctf，进行ctf show上的（vip限免）题目学习。
                         
                     </div>
                     <div class="publish-info">
@@ -1267,7 +1392,7 @@
         <div class="col s12 m8 l8 copy-right">
             Copyright&nbsp;&copy;
             
-                <span id="year">2022</span>
+                <span id="year">2022-2023</span>
             
             <a href="/about" target="_blank">呆子</a>
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
