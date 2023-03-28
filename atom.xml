@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>DZ_Blog</title>
+  
+  <subtitle>越努力	越幸福</subtitle>
+  <link href="https://dzbash.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://dzbash.github.io/"/>
+  <updated>2023-03-28T14:49:20.051Z</updated>
+  <id>https://dzbash.github.io/</id>
+  
+  <author>
+    <name>呆子</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>linux K-lili-永恒之蓝漏洞利用</title>
+    <link href="https://dzbash.github.io/2023/03/28/linux-k-lili-yong-heng-zhi-lan-lou-dong-li-yong/"/>
+    <id>https://dzbash.github.io/2023/03/28/linux-k-lili-yong-heng-zhi-lan-lou-dong-li-yong/</id>
+    <published>2023-03-28T13:10:37.000Z</published>
+    <updated>2023-03-28T14:49:20.051Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;连接到目标主机&quot;&gt;&lt;a href=&quot;#连接到目标主机&quot; class=&quot;headerlink&quot; title=&quot;连接到目标主机&quot;&gt;&lt;/a&gt;连接到目标主机&lt;/h3&gt;&lt;h4 id=&quot;启动msfconsole&quot;&gt;&lt;a href=&quot;#启动msfconsole&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="linux" scheme="https://dzbash.github.io/categories/linux/"/>
+    
+    
+    <category term="kali" scheme="https://dzbash.github.io/tags/kali/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>初识JavaScript</title>
+    <link href="https://dzbash.github.io/2023/02/01/chu-shi-javascript/"/>
+    <id>https://dzbash.github.io/2023/02/01/chu-shi-javascript/</id>
+    <published>2023-02-01T01:52:03.000Z</published>
+    <updated>2023-02-14T12:01:06.271Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;基础知识点和语法&quot;&gt;&lt;a href=&quot;#基础知识点和语法&quot; class=&quot;headerlink&quot; title=&quot;基础知识点和语法&quot;&gt;&lt;/a&gt;基础知识点和语法&lt;/h3&gt;&lt;p&gt;JavaScript</summary>
+        
+      
+    
+    
+    
+    <category term="笔记" scheme="https://dzbash.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="js" scheme="https://dzbash.github.io/tags/js/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HTML+CSS前端学习笔记-8</title>
+    <link href="https://dzbash.github.io/2023/01/31/html-css-qian-duan-xue-xi-bi-ji-8/"/>
+    <id>https://dzbash.github.io/2023/01/31/html-css-qian-duan-xue-xi-bi-ji-8/</id>
+    <published>2023-01-31T00:57:36.000Z</published>
+    <updated>2023-02-14T11:43:42.413Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;CSS布局&quot;&gt;&lt;a href=&quot;#CSS布局&quot; class=&quot;headerlink&quot; title=&quot;CSS布局&quot;&gt;&lt;/a&gt;CSS布局&lt;/h2&gt;&lt;h3 id=&quot;定位&quot;&gt;&lt;a href=&quot;#定位&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="笔记" scheme="https://dzbash.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="CSS" scheme="https://dzbash.github.io/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HTML+CSS前端学习笔记-7</title>
+    <link href="https://dzbash.github.io/2023/01/30/html-css-qian-duan-xue-xi-bi-ji-7/"/>
+    <id>https://dzbash.github.io/2023/01/30/html-css-qian-duan-xue-xi-bi-ji-7/</id>
+    <published>2023-01-30T00:55:49.000Z</published>
+    <updated>2023-02-10T11:48:04.558Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;BFC介绍&quot;&gt;&lt;a href=&quot;#BFC介绍&quot; class=&quot;headerlink&quot; title=&quot;BFC介绍&quot;&gt;&lt;/a&gt;BFC介绍&lt;/h4&gt;&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="笔记" scheme="https://dzbash.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="CSS" scheme="https://dzbash.github.io/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在Typora中利用CSDN图床</title>
+    <link href="https://dzbash.github.io/2023/01/29/zai-typora-zhong-li-yong-csdn-tu-chuang/"/>
+    <id>https://dzbash.github.io/2023/01/29/zai-typora-zhong-li-yong-csdn-tu-chuang/</id>
+    <published>2023-01-29T02:10:52.000Z</published>
+    <updated>2023-02-08T07:24:34.740Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="随笔" scheme="https://dzbash.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+    <category term="hexo" scheme="https://dzbash.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HTML+CSS前端学习笔记-6</title>
+    <link href="https://dzbash.github.io/2023/01/29/html-css-qian-duan-xue-xi-bi-ji-6/"/>
+    <id>https://dzbash.github.io/2023/01/29/html-css-qian-duan-xue-xi-bi-ji-6/</id>
+    <published>2023-01-29T00:44:54.000Z</published>
+    <updated>2023-02-08T12:12:40.701Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;CSS布局&quot;&gt;&lt;a href=&quot;#CSS布局&quot; class=&quot;headerlink&quot; title=&quot;CSS布局&quot;&gt;&lt;/a&gt;CSS布局&lt;/h2&gt;&lt;h3 id=&quot;结构伪类选择器&quot;&gt;&lt;a href=&quot;#结构伪类选择器&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="笔记" scheme="https://dzbash.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="CSS" scheme="https://dzbash.github.io/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Github免费图床搭建</title>
+    <link href="https://dzbash.github.io/2023/01/27/github-mian-fei-tu-chuang-da-jian/"/>
+    <id>https://dzbash.github.io/2023/01/27/github-mian-fei-tu-chuang-da-jian/</id>
+    <published>2023-01-27T01:31:52.000Z</published>
+    <updated>2023-02-08T12:09:50.817Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;5分钟完成  PicGo + Github 图床搭建&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&quot;创建Github仓库&quot;&gt;&lt;a href=&quot;#创建Github仓库&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="随笔" scheme="https://dzbash.github.io/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+    <category term="hexo" scheme="https://dzbash.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HTML+CSS前端学习笔记-5</title>
+    <link href="https://dzbash.github.io/2023/01/27/html-css-qian-duan-xue-xi-bi-ji-5/"/>
+    <id>https://dzbash.github.io/2023/01/27/html-css-qian-duan-xue-xi-bi-ji-5/</id>
+    <published>2023-01-27T01:04:11.000Z</published>
+    <updated>2023-02-08T12:11:04.042Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;CSS基础&quot;&gt;&lt;a href=&quot;#CSS基础&quot; class=&quot;headerlink&quot; title=&quot;CSS基础&quot;&gt;&lt;/a&gt;CSS基础&lt;/h2&gt;&lt;h3 id=&quot;CSS三大特性&quot;&gt;&lt;a href=&quot;#CSS三大特性&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="笔记" scheme="https://dzbash.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="CSS" scheme="https://dzbash.github.io/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HTML+CSS前端学习笔记-4</title>
+    <link href="https://dzbash.github.io/2023/01/17/html-css-qian-duan-xue-xi-bi-ji-4/"/>
+    <id>https://dzbash.github.io/2023/01/17/html-css-qian-duan-xue-xi-bi-ji-4/</id>
+    <published>2023-01-17T01:36:09.000Z</published>
+    <updated>2023-01-27T01:12:32.009Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;CSS基础&quot;&gt;&lt;a href=&quot;#CSS基础&quot; class=&quot;headerlink&quot; title=&quot;CSS基础&quot;&gt;&lt;/a&gt;CSS基础&lt;/h2&gt;&lt;h3 id=&quot;选择器进阶&quot;&gt;&lt;a href=&quot;#选择器进阶&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="笔记" scheme="https://dzbash.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="CSS" scheme="https://dzbash.github.io/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HTML+CSS前端学习笔记-3</title>
+    <link href="https://dzbash.github.io/2023/01/16/html-css-qian-duan-xue-xi-bi-ji-3/"/>
+    <id>https://dzbash.github.io/2023/01/16/html-css-qian-duan-xue-xi-bi-ji-3/</id>
+    <published>2023-01-16T00:49:15.000Z</published>
+    <updated>2023-01-17T02:04:46.226Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;CSS基础&quot;&gt;&lt;a href=&quot;#CSS基础&quot; class=&quot;headerlink&quot; title=&quot;CSS基础&quot;&gt;&lt;/a&gt;CSS基础&lt;/h2&gt;&lt;h3 id=&quot;基础认知&quot;&gt;&lt;a href=&quot;#基础认知&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="笔记" scheme="https://dzbash.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="CSS" scheme="https://dzbash.github.io/tags/CSS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端案例1</title>
+    <link href="https://dzbash.github.io/2023/01/15/qian-duan-an-li-1/"/>
+    <id>https://dzbash.github.io/2023/01/15/qian-duan-an-li-1/</id>
+    <published>2023-01-15T02:04:53.000Z</published>
+    <updated>2023-01-16T02:11:25.588Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;优秀学生信息表格&quot;&gt;&lt;a href=&quot;#优秀学生信息表格&quot; class=&quot;headerlink&quot; title=&quot;优秀学生信息表格&quot;&gt;&lt;/a&gt;优秀学生信息表格&lt;/h2&gt;&lt;p&gt;案例实验效果：&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="笔记" scheme="https://dzbash.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="HTML" scheme="https://dzbash.github.io/tags/HTML/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HTML+CSS前端学习笔记-2</title>
+    <link href="https://dzbash.github.io/2023/01/13/html-css-qian-duan-xue-xi-bi-ji-2/"/>
+    <id>https://dzbash.github.io/2023/01/13/html-css-qian-duan-xue-xi-bi-ji-2/</id>
+    <published>2023-01-13T01:04:09.000Z</published>
+    <updated>2023-01-17T02:07:31.523Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;HTML标签学习&quot;&gt;&lt;a href=&quot;#HTML标签学习&quot; class=&quot;headerlink&quot; title=&quot;HTML标签学习&quot;&gt;&lt;/a&gt;HTML标签学习&lt;/h2&gt;&lt;h3 id=&quot;列表标签&quot;&gt;&lt;a href=&quot;#列表标签&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="笔记" scheme="https://dzbash.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="HTML" scheme="https://dzbash.github.io/tags/HTML/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HTML+CSS前端学习笔记-1</title>
+    <link href="https://dzbash.github.io/2023/01/12/html-css-qian-duan-xue-xi-bi-ji-1/"/>
+    <id>https://dzbash.github.io/2023/01/12/html-css-qian-duan-xue-xi-bi-ji-1/</id>
+    <published>2023-01-12T02:06:07.000Z</published>
+    <updated>2023-01-17T02:09:58.073Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;HTML基础认知&quot;&gt;&lt;a href=&quot;#HTML基础认知&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="笔记" scheme="https://dzbash.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="HTML" scheme="https://dzbash.github.io/tags/HTML/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CSRF-学习笔记</title>
+    <link href="https://dzbash.github.io/2022/12/23/csrff-xue-xi-bi-ji/"/>
+    <id>https://dzbash.github.io/2022/12/23/csrff-xue-xi-bi-ji/</id>
+    <published>2022-12-23T01:45:27.000Z</published>
+    <updated>2023-01-03T09:00:27.915Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;CSRF概念&quot;&gt;&lt;a href=&quot;#CSRF概念&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="漏洞分析" scheme="https://dzbash.github.io/categories/%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/"/>
+    
+    
+    <category term="CSRF" scheme="https://dzbash.github.io/tags/CSRF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java学习_1</title>
+    <link href="https://dzbash.github.io/2022/11/17/java-xue-xi-1/"/>
+    <id>https://dzbash.github.io/2022/11/17/java-xue-xi-1/</id>
+    <published>2022-11-17T11:52:39.000Z</published>
+    <updated>2023-01-12T02:07:38.628Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;学习记录&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&quot;初识Java（面向对象）&quot;&gt;&lt;a href=&quot;#初识Java（面向对象）&quot; class=&quot;headerlink&quot; title=&quot;初识Java（面向对象）&quot;&gt;&lt;/a&gt;初识Java（面向对象）&lt;/h3&gt;&lt;h5</summary>
+        
+      
+    
+    
+    
+    <category term="笔记" scheme="https://dzbash.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="Java" scheme="https://dzbash.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>XSS 漏洞总结</title>
+    <link href="https://dzbash.github.io/2022/10/18/xss-lou-dong-zong-jie/"/>
+    <id>https://dzbash.github.io/2022/10/18/xss-lou-dong-zong-jie/</id>
+    <published>2022-10-18T07:39:32.000Z</published>
+    <updated>2023-01-12T07:53:40.663Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="漏洞分析" scheme="https://dzbash.github.io/categories/%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/"/>
+    
+    
+    <category term="xss" scheme="https://dzbash.github.io/tags/xss/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ctf（vip限免）WP</title>
+    <link href="https://dzbash.github.io/2022/03/22/ctf-vip-xian-mian-wp/"/>
+    <id>https://dzbash.github.io/2022/03/22/ctf-vip-xian-mian-wp/</id>
+    <published>2022-03-22T07:20:34.000Z</published>
+    <updated>2023-01-16T12:48:15.501Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;hr&gt;
+&lt;h2 id=&quot;源码泄露&quot;&gt;&lt;a href=&quot;#源码泄露&quot; class=&quot;headerlink&quot; title=&quot;源码泄露&quot;&gt;&lt;/a&gt;源码泄露&lt;/h2&gt;&lt;p&gt;看题就是要我们看源码，在浏览器里 Ctrl + U</summary>
+        
+      
+    
+    
+    
+    <category term="wp" scheme="https://dzbash.github.io/categories/wp/"/>
+    
+    
+    <category term="ctf" scheme="https://dzbash.github.io/tags/ctf/"/>
+    
+  </entry>
+  
+</feed>

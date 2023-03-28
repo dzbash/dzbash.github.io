@@ -1,0 +1,1 @@
+themes\matery\layout\_partial\bg-cover-content.ejs

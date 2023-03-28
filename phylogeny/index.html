@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>DZ‘s 发展史</title>
+<meta name="keywords" content="这里SEO关键词"/>
+<meta name="description" content="这里网站介绍"/>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+</head>
+<body>
+<div class="content">
+	<div class="wrapper">
+		<div class="light"><i></i></div>
+		<hr class="line-left">
+		<hr class="line-right">
+		<div class="main">
+			<h1 class="title">不太准的时间轴</h1>		
+			<div class="year">
+				<h2><a href="#">2022年<i></i></a></h2>
+				<div class="list">
+					<ul>
+						<li class="cls">
+							<p class="date">10月15日</p>
+							<p class="intro">DZ_Blog 正式搭建</p>
+							<p class="version">&nbsp;</p>
+							<div class="more">
+								<p>一个崭新的平台出现</p>
+							</div>
+						</li>
+						<li class="cls">
+							<p class="date">11月17日</p>
+							<p class="intro">呆子 分享第一部影视 </p>
+							<p class="version">&nbsp;</p>
+							<div class="more">
+								<p>Java学习笔记</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="year">
+				<h2><a href="#">2023年<i></i></a></h2>
+				<div class="list">
+					<ul>
+						<li class="cls">
+							<p class="date">1月8日</p>
+							<p class="intro">暂时到这里了</p>
+							<p class="version">&nbsp;</p>
+							<div class="more">
+								<p>这是html单页展示</p>
+							</div>
+						</li>
+						<li class="cls highlight">
+							<p class="date">1月9日</p>
+							<p class="intro">正式启用</p>
+							<p class="version">&nbsp;</p>
+							<div class="more">
+								<p>花费过年买鞭炮的大洋！</p>
+							</div>
+                       </li>
+					</ul>
+				</div>
+			</div>
+
+							</div>
+                       </li>
+					</ul>
+				</div>
+			</div>	
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(".main .year .list").each(function(e, target){
+	var $target=$(target),
+	$ul = $target.find("ul");
+	$target.height($ul.outerHeight()), $ul.css("position", "absolute");
+}); 
+$(".main .year>h2>a").click(function(e){
+	e.preventDefault();
+	$(this).parents(".year").toggleClass("close");
+});
+</script>
+	
+</body>
+</html>
+
