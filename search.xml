@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>HTML+CSS前端学习笔记-9</title>
+      <link href="/2023/04/03/html-css-qian-duan-xue-xi-bi-ji-9/"/>
+      <url>/2023/04/03/html-css-qian-duan-xue-xi-bi-ji-9/</url>
+      
+        <content type="html"><![CDATA[<h4 id="transition-过渡动画"><a href="#transition-过渡动画" class="headerlink" title="transition 过渡动画"></a>transition 过渡动画</h4><p>参数有两个，前面是<code>all</code>或者<code>单个属性(height,width,background-color,等)</code>表示全部能过滤的都过滤和只有宽度过滤</p><p>用空格分开，后面是时间，单位秒，表示过滤消耗的时间</p><p>需要配合hover的不同来实现，如下</p><pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style language-css">        <span class="token selector">div </span><span class="token punctuation">{</span>            <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span>            <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">200</span>px<span class="token punctuation">;</span>            <span class="token property">background-color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>            <span class="token property">transition</span><span class="token punctuation">:</span> all <span class="token number">1</span>s<span class="token punctuation">;</span>        <span class="token punctuation">}</span>        <span class="token selector">div<span class="token pseudo-class">:hover</span> </span><span class="token punctuation">{</span>            <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">800</span>px<span class="token punctuation">;</span>            <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">300</span>px<span class="token punctuation">;</span>            <span class="token property">background-color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>        <span class="token punctuation">}</span>    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h4 id="有语义的布局标签"><a href="#有语义的布局标签" class="headerlink" title="有语义的布局标签"></a>有语义的布局标签</h4><table><thead><tr><th align="center">标签名</th><th align="center">语义</th></tr></thead><tbody><tr><td align="center">header</td><td align="center">网页头部</td></tr><tr><td align="center">nav</td><td align="center">网页导航</td></tr><tr><td align="center">footer</td><td align="center">网页底部</td></tr><tr><td align="center">aside</td><td align="center">网页侧边栏</td></tr><tr><td align="center">section</td><td align="center">网页区块</td></tr><tr><td align="center">article</td><td align="center">网页文章</td></tr></tbody></table><h4 id="ico-图标设置"><a href="#ico-图标设置" class="headerlink" title="ico-图标设置"></a>ico-图标设置</h4><pre class="line-numbers language-css"><code class="language-css">&lt;link rel=<span class="token string">"shortrcut icon"</span> href=<span class="token string">"ico图标路径"</span> type=<span class="token string">"image/x-icon"</span>><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h4 id="版心"><a href="#版心" class="headerlink" title="版心"></a>版心</h4><p>将页面的主题内容约束在网页中间，是不同大小的屏幕都能看到主题内容</p><pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token class">.container</span> </span><span class="token punctuation">{</span>    <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">1245</span>px<span class="token punctuation">;</span>    <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">0</span> auto<span class="token punctuation">;</span>    &lt;!-- 水平居中 --><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>除此之外常见的版心类名还有：<code>container</code>、<code>wrapper</code>、<code>w</code>等</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> CSS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>linux K-lili-永恒之蓝漏洞利用</title>
       <link href="/2023/03/28/linux-k-lili-yong-heng-zhi-lan-lou-dong-li-yong/"/>
       <url>/2023/03/28/linux-k-lili-yong-heng-zhi-lan-lou-dong-li-yong/</url>

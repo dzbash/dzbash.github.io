@@ -6,7 +6,7 @@
   <link href="https://dzbash.github.io/atom.xml" rel="self"/>
   
   <link href="https://dzbash.github.io/"/>
-  <updated>2023-03-28T14:49:20.051Z</updated>
+  <updated>2023-04-03T12:55:42.549Z</updated>
   <id>https://dzbash.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HTML+CSS前端学习笔记-9</title>
+    <link href="https://dzbash.github.io/2023/04/03/html-css-qian-duan-xue-xi-bi-ji-9/"/>
+    <id>https://dzbash.github.io/2023/04/03/html-css-qian-duan-xue-xi-bi-ji-9/</id>
+    <published>2023-04-03T09:26:43.000Z</published>
+    <updated>2023-04-03T12:55:42.549Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h4 id=&quot;transition-过渡动画&quot;&gt;&lt;a href=&quot;#transition-过渡动画&quot; class=&quot;headerlink&quot; title=&quot;transition 过渡动画&quot;&gt;&lt;/a&gt;transition</summary>
+        
+      
+    
+    
+    
+    <category term="笔记" scheme="https://dzbash.github.io/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="CSS" scheme="https://dzbash.github.io/tags/CSS/"/>
+    
+  </entry>
   
   <entry>
     <title>linux K-lili-永恒之蓝漏洞利用</title>
